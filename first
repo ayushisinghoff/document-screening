@@ -1,1 +1,582 @@
-// interfaces
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-high":"#dce9ff","on-secondary-container":"#004f7b","tertiary":"#000000","surface-container-highest":"#d3e4fe","on-tertiary":"#ffffff","secondary-fixed-dim":"#94ccff","tertiary-container":"#0f0069","tertiary-fixed":"#e2dfff","on-surface":"#0b1c30","on-secondary-fixed":"#001d32","primary-fixed":"#dae2fd","surface-container":"#e5eeff","inverse-primary":"#bec6e0","on-primary-fixed-variant":"#3f465c","secondary-container":"#7bc2ff","error-container":"#ffdad6","on-primary":"#ffffff","background":"#f8f9ff","outline":"#76777d","primary":"#000000","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#3323cc","surface-tint":"#565e74","on-primary-fixed":"#131b2e","on-secondary-fixed-variant":"#004b74","on-error-container":"#93000a","surface":"#f8f9ff","on-primary-container":"#7c839b","surface-container-low":"#eff4ff","surface-container-lowest":"#ffffff","surface-variant":"#d3e4fe","outline-variant":"#c6c6cd","surface-bright":"#f8f9ff","surface-dim":"#cbdbf5","secondary":"#006399","on-tertiary-fixed":"#0f0069","on-surface-variant":"#45464d","error":"#ba1a1a","primary-fixed-dim":"#bec6e0","tertiary-fixed-dim":"#c3c0ff","inverse-surface":"#213145","on-tertiary-container":"#7671ff","on-error":"#ffffff","on-background":"#0b1c30","secondary-fixed":"#cde5ff","inverse-on-surface":"#eaf1ff","primary-container":"#131b2e"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"unit-2xs":"0.125rem","unit-2xl":"2rem","grid-gutter":"1rem","panel-margin":"1.5rem","unit-xs":"0.25rem","unit-xl":"1.5rem","unit-md":"0.75rem","unit-sm":"0.5rem","unit-3xl":"3rem","unit-lg":"1rem"},"fontFamily":{"label-caps":["JetBrains Mono"],"data-mono-sm":["JetBrains Mono"],"display-lg-mobile":["Public Sans"],"body-md":["Public Sans"],"headline-md":["Public Sans"],"headline-sm":["Public Sans"],"data-mono-md":["JetBrains Mono"],"data-mono-lg":["JetBrains Mono"],"display-lg":["Public Sans"],"headline-lg":["Public Sans"],"body-lg":["Public Sans"],"body-sm":["Public Sans"]},"fontSize":{"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"600"}],"data-mono-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.03em","fontWeight":"500"}],"display-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"data-mono-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"500"}],"data-mono-lg":["18px",{"lineHeight":"24px","letterSpacing":"0.02em","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-primary-container text-on-primary border-b border-inverse-surface"><div class="h-7 px-grid-gutter bg-[#0b1329] flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps border-b border-[#1e293b]"><div class="flex items-center gap-unit-md"><span class="flex items-center gap-unit-xs text-[#10b981]"><span class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>AIR-GAPPED ENGINE: ACTIVE | LOCAL MODEL V4.2</span><span class="text-outline">|</span><span class="text-inverse-on-surface">SQLITE STORE: <span class="text-[#10b981]">SYNCED</span></span><span class="text-outline">|</span><span class="text-inverse-on-surface">QUEUED SYNC: <span class="text-[#f59e0b]">4 PENDING</span></span></div><div class="flex items-center gap-unit-md"><span class="text-inverse-on-surface">STATION TIME: <span class="text-on-primary font-data-mono-sm text-data-mono-sm">14:28:09 UTC</span></span><span class="text-outline">|</span><span class="text-inverse-on-surface">LAST SYNC: 14:26:40 UTC</span></div></div><div class="h-14 px-grid-gutter flex items-center justify-between"><div class="flex items-center gap-unit-lg"><img alt="SecureVerify Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XyaHsbO88-ciO9ZUyrykzwscfmmG3YyxxfPVZOEwGSF1fKA27bPLIRybFWqh5WTguWeEdY-W2MX4wzfJe5BT891Sarf-F9eo3ioU7zskhKzcRXKw8tctYElxCRocW8_b-tuIMyPTuL-7KFlkhDZhoimtFzoz5Yt5doSnoTmNiL8xprwW36yYb_Wge6wdcPWTo_27WYRP_O4gV1xhutMuor5J_OAx8T85OWNNO0Ntduxt4NCSyr-t-7Ef7H"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-primary">SecureVerify</span><span class="font-label-caps text-label-caps text-secondary-container uppercase">AI Document &amp; Identity Screening System</span></div></div><div class="flex items-center gap-unit-lg"><div class="hidden xl:flex items-center gap-unit-md px-unit-md py-unit-xs bg-inverse-surface rounded text-on-primary"><div class="flex flex-col text-right"><span class="font-label-caps text-label-caps text-surface-variant">TERMINAL STATION</span><span class="font-data-mono-sm text-data-mono-sm text-secondary-container font-semibold">DEL-CP-04 (Terminal 3)</span></div></div><div class="hidden md:flex items-center gap-unit-sm px-unit-md py-unit-xs bg-inverse-surface rounded"><div class="w-8 h-8 rounded-full bg-surface-tint flex items-center justify-center overflow-hidden border border-secondary-container"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><span class="font-headline-sm text-[13px] leading-tight text-on-primary">Officer Michael Chen</span><span class="font-data-mono-sm text-[11px] leading-tight text-secondary-fixed">ID #38491</span></div></div><div class="flex items-center gap-unit-sm"><button class="h-8 px-unit-md bg-secondary text-on-secondary rounded font-label-caps text-label-caps uppercase flex items-center gap-unit-xs hover:bg-secondary-container hover:text-on-secondary-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">add_circle</span><span>Start New</span></button><button class="h-8 px-unit-md bg-error text-on-error rounded font-label-caps text-label-caps uppercase flex items-center gap-unit-xs hover:bg-error-container hover:text-on-error-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">warning</span><span>Alert</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center border border-outline-variant"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-[84px] bottom-0 w-64 bg-surface-container-low border-r border-outline-variant z-40 flex flex-col justify-between"><div class="flex flex-col pt-unit-md"><div class="px-unit-lg py-unit-xs mb-unit-sm"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Inspection Controls</span></div><nav class="flex flex-col px-unit-sm gap-unit-2xs" data-active-classes="bg-surface-container-highest text-on-surface font-semibold border-l-4 border-secondary"><a aria-current="page" class="flex items-center gap-unit-sm px-unit-md py-unit-sm rounded-DEFAULT transition-all bg-surface-container-highest text-on-surface font-semibold border-l-4 border-secondary" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-unit-sm px-unit-md py-unit-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all font-body-md text-body-md" data-path="new-verification" href="#"><span class="material-symbols-outlined text-[20px]">document_scanner</span><span>New Verification</span></a><a class="flex items-center gap-unit-sm px-unit-md py-unit-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all font-body-md text-body-md" data-path="verification-records-&amp;-history" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Verification History</span></a><a class="flex items-center gap-unit-sm px-unit-md py-unit-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all font-body-md text-body-md" data-path="verification-audit-&amp;-details" href="#"><span class="material-symbols-outlined text-[20px]">policy</span><span>Audit &amp; Telemetry</span></a><a class="flex items-center gap-unit-sm px-unit-md py-unit-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-DEFAULT transition-all font-body-md text-body-md" data-path="system-&amp;-engine-status" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span>Engine Status</span></a></nav></div><div class="p-unit-md border-t border-outline-variant bg-surface-container"><div class="flex flex-col gap-unit-xs font-data-mono-sm text-data-mono-sm text-on-surface-variant"><div class="flex justify-between"><span>HSM SLOT:</span><span class="text-secondary font-semibold">SEC-HSM-A01</span></div><div class="flex justify-between"><span>LOCAL DB:</span><span class="text-on-surface font-semibold">SQLITE 3.42</span></div><div class="flex justify-between"><span>LATENCY:</span><span class="text-secondary font-semibold">0.12 ms</span></div></div></div></aside><div class="pl-64"><main class="w-full pt-[84px] bg-background min-h-screen"><div class="flex flex-col w-full p-panel-margin gap-unit-xl">
+<!-- Top Command & Action Section -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-unit-md">
+<div class="flex flex-col gap-unit-2xs">
+<div class="flex items-center gap-unit-xs">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Mission-Ready Operational Station</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Checkpoint Dashboard — Shift Terminal 3 (DEL-CP-04)</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time local neural screening, air-gapped ledger validation &amp; forensic identity integrity</p>
+</div>
+<div class="flex items-center gap-unit-sm flex-wrap">
+<button class="h-10 px-unit-lg bg-secondary text-on-secondary rounded-lg font-label-caps text-label-caps uppercase flex items-center gap-unit-xs shadow-sm hover:bg-on-secondary-container transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">document_scanner</span>
+<span>+ Start New Verification</span>
+</button>
+<button class="h-10 px-unit-md bg-surface-container text-on-surface rounded-lg font-label-caps text-label-caps uppercase flex items-center gap-unit-xs hover:bg-surface-container-high transition-all" id="syncQueueBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Sync Offline Queue</span>
+</button>
+<button class="h-10 w-10 flex items-center justify-center bg-surface-container text-on-surface rounded-lg hover:bg-surface-container-high transition-all" title="System Settings" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Strip -->
+<div class="w-full bg-surface-container-low rounded-lg p-unit-md shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit-md">
+<div class="flex items-center gap-unit-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]">memory</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Air-Gapped Status</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">Local ONNX Models Loaded (v4.2.1-Edge)</span>
+</div>
+</div>
+<div class="flex items-center gap-unit-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">database</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Local Storage Health</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">SQLite Synced · 1,429 records cached</span>
+</div>
+</div>
+<div class="flex items-center gap-unit-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]">link</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Ledger Integrity Seal</span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">4 Integrity Hashes Pending Relay</span>
+</div>
+</div>
+</div>
+</div>
+<!-- KPI Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-unit-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-unit-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Verifications</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">1,429</span>
+<div class="flex items-center gap-unit-2xs mt-unit-2xs text-secondary font-data-mono-sm text-data-mono-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12% vs prior shift</span>
+</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-unit-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">High Confidence</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">1,288</span>
+<div class="flex items-center gap-unit-2xs mt-unit-2xs text-on-surface-variant font-data-mono-sm text-data-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>90.1% clearance baseline</span>
+</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-unit-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Issues Flagged</span>
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">141</span>
+<div class="flex items-center gap-unit-2xs mt-unit-2xs text-error font-data-mono-sm text-data-mono-sm">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span>9.9% anomaly rate</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-unit-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Manual Queue</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">supervised_user_circle</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-unit-xs">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">18</span>
+<span class="font-label-caps text-label-caps text-on-secondary-container uppercase">Active</span>
+</div>
+<div class="mt-unit-2xs">
+<span class="inline-flex items-center px-unit-xs py-unit-2xs rounded bg-error-container text-on-error-container font-label-caps text-label-caps uppercase">Action Required</span>
+</div>
+</div>
+</div>
+<!-- KPI 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-unit-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Ledger Proof</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">100%</span>
+<div class="flex items-center gap-unit-2xs mt-unit-2xs text-secondary font-data-mono-sm text-data-mono-sm">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span>Immutable SHA-256 Tree</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Inspection Pipeline Visualizer -->
+<div class="bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col gap-unit-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-unit-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">hub</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Edge Verification Pipeline Inferences</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sequential offline forensic validation layers operating entirely within local hardware security enclaves</p>
+</div>
+</div>
+<div class="flex items-center gap-unit-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Pipeline Avg Latency:</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary font-bold">1.24s</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-unit-sm">
+<!-- Stage 1 -->
+<div class="bg-surface-container-low rounded-lg p-unit-md flex flex-col justify-between hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-unit-sm">
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">01 / INGEST</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Document Capture</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary block mt-unit-2xs">0.42s latency</span>
+</div>
+<div class="mt-unit-md pt-unit-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">UV/IR &amp; White multi-band capture</span>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="bg-surface-container-low rounded-lg p-unit-md flex flex-col justify-between hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-unit-sm">
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">02 / OCR</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">MRZ &amp; Text Parse</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary block mt-unit-2xs">98.4% accuracy</span>
+</div>
+<div class="mt-unit-md pt-unit-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">ICAO 9303 Doc 1-3 format engine</span>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="bg-surface-container-low rounded-lg p-unit-md flex flex-col justify-between hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-unit-sm">
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">03 / FORENSICS</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Tamper Anomaly</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary block mt-unit-2xs">Local ResNet/YOLO</span>
+</div>
+<div class="mt-unit-md pt-unit-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hologram, microprint &amp; photo splice</span>
+</div>
+</div>
+<!-- Stage 4 -->
+<div class="bg-surface-container-low rounded-lg p-unit-md flex flex-col justify-between hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-unit-sm">
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">04 / BIOMETRICS</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">ArcFace 1:1 Match</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary block mt-unit-2xs">512D Vector Embed</span>
+</div>
+<div class="mt-unit-md pt-unit-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Live camera vs chip portrait</span>
+</div>
+</div>
+<!-- Stage 5 -->
+<div class="bg-surface-container-low rounded-lg p-unit-md flex flex-col justify-between hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-unit-sm">
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">05 / CROSS-REF</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Multi-Factor Scan</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary block mt-unit-2xs">Local Watchlist v3</span>
+</div>
+<div class="mt-unit-md pt-unit-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">NFC ePassport DG1/DG2 matching</span>
+</div>
+</div>
+<!-- Stage 6 -->
+<div class="bg-surface-container-low rounded-lg p-unit-md flex flex-col justify-between hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-unit-sm">
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface-variant font-bold">06 / PROOF</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Integrity Seal</span>
+<span class="font-data-mono-sm text-data-mono-sm text-secondary block mt-unit-2xs">HSM Encrypted</span>
+</div>
+<div class="mt-unit-md pt-unit-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">ECDSA signed chain audit trail</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mid Row: Document Queue & Forensic Breakdown -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-unit-lg">
+<!-- Recent Records Table (8 Cols) -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col justify-between gap-unit-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-unit-xs">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Document Verifications</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live station feed showing real-time operator disposition and model certainty metrics</p>
+</div>
+<div class="flex items-center gap-unit-xs">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-2 text-on-surface-variant text-[18px]">search</span>
+<input class="h-8 pl-8 pr-unit-sm bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container" placeholder="Search ID or Name..." type="text"/>
+</div>
+<button class="h-8 px-unit-sm bg-surface-container rounded text-on-surface font-label-caps text-label-caps uppercase flex items-center gap-unit-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Filter</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase">
+<th class="py-unit-sm px-unit-md">Verification ID</th>
+<th class="py-unit-sm px-unit-md">Timestamp</th>
+<th class="py-unit-sm px-unit-md">Doc Type</th>
+<th class="py-unit-sm px-unit-md">Subject Name</th>
+<th class="py-unit-sm px-unit-md">Confidence</th>
+<th class="py-unit-sm px-unit-md">Detected Anomaly</th>
+<th class="py-unit-sm px-unit-md">Status</th>
+<th class="py-unit-sm px-unit-md">Operator</th>
+<th class="py-unit-sm px-unit-md text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm font-semibold text-secondary">#SV-98421</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">14:27:52</td>
+<td class="py-unit-sm px-unit-md flex items-center gap-unit-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">badge</span>
+<span class="text-on-surface font-medium">National Passport</span>
+</td>
+<td class="py-unit-sm px-unit-md font-medium text-on-surface">Alexei Morozov</td>
+<td class="py-unit-sm px-unit-md">
+<div class="flex items-center gap-unit-xs w-28">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 96.4%"></div>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">96%</span>
+</div>
+</td>
+<td class="py-unit-sm px-unit-md font-body-sm text-body-sm text-on-surface-variant">None · Verified</td>
+<td class="py-unit-sm px-unit-md">
+<span class="inline-flex items-center gap-unit-2xs px-unit-xs py-unit-2xs rounded bg-surface-container-high text-on-secondary-container font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Verified
+                </span>
+</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">M. Chen</td>
+<td class="py-unit-sm px-unit-md text-right">
+<a class="font-label-caps text-label-caps uppercase text-secondary hover:underline" href="#">Inspect</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm font-semibold text-secondary">#SV-98420</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">14:26:18</td>
+<td class="py-unit-sm px-unit-md flex items-center gap-unit-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">credit_card</span>
+<span class="text-on-surface font-medium">National ID / Aadhaar</span>
+</td>
+<td class="py-unit-sm px-unit-md font-medium text-on-surface">Priya S. Sharma</td>
+<td class="py-unit-sm px-unit-md">
+<div class="flex items-center gap-unit-xs w-28">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 84.1%"></div>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">84%</span>
+</div>
+</td>
+<td class="py-unit-sm px-unit-md font-body-sm text-body-sm text-on-surface-variant">Face Similarity Delta (18%)</td>
+<td class="py-unit-sm px-unit-md">
+<span class="inline-flex items-center gap-unit-2xs px-unit-xs py-unit-2xs rounded bg-surface-container text-on-surface font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+                  Needs Review
+                </span>
+</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">M. Chen</td>
+<td class="py-unit-sm px-unit-md text-right">
+<a class="font-label-caps text-label-caps uppercase text-secondary hover:underline" href="#">Inspect</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm font-semibold text-secondary">#SV-98419</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">14:24:02</td>
+<td class="py-unit-sm px-unit-md flex items-center gap-unit-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">drive_eta</span>
+<span class="text-on-surface font-medium">Driver License</span>
+</td>
+<td class="py-unit-sm px-unit-md font-medium text-on-surface">Jean-Luc Dupont</td>
+<td class="py-unit-sm px-unit-md">
+<div class="flex items-center gap-unit-xs w-28">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 72.0%"></div>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-error font-semibold">72%</span>
+</div>
+</td>
+<td class="py-unit-sm px-unit-md font-body-sm text-body-sm text-error font-medium">Photo Region Inconsistency (12%)</td>
+<td class="py-unit-sm px-unit-md">
+<span class="inline-flex items-center gap-unit-2xs px-unit-xs py-unit-2xs rounded bg-error-container text-on-error-container font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  High Concern
+                </span>
+</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">R. Tanaka</td>
+<td class="py-unit-sm px-unit-md text-right">
+<a class="font-label-caps text-label-caps uppercase text-error hover:underline font-bold" href="#">Inspect</a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm font-semibold text-secondary">#SV-98418</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">14:21:40</td>
+<td class="py-unit-sm px-unit-md flex items-center gap-unit-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">badge</span>
+<span class="text-on-surface font-medium">National Passport</span>
+</td>
+<td class="py-unit-sm px-unit-md font-medium text-on-surface">Klaus Obermeier</td>
+<td class="py-unit-sm px-unit-md">
+<div class="flex items-center gap-unit-xs w-28">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 98.9%"></div>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">99%</span>
+</div>
+</td>
+<td class="py-unit-sm px-unit-md font-body-sm text-body-sm text-on-surface-variant">None · Verified</td>
+<td class="py-unit-sm px-unit-md">
+<span class="inline-flex items-center gap-unit-2xs px-unit-xs py-unit-2xs rounded bg-surface-container-high text-on-secondary-container font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Verified
+                </span>
+</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">M. Chen</td>
+<td class="py-unit-sm px-unit-md text-right">
+<a class="font-label-caps text-label-caps uppercase text-secondary hover:underline" href="#">Inspect</a>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm font-semibold text-secondary">#SV-98417</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">14:19:15</td>
+<td class="py-unit-sm px-unit-md flex items-center gap-unit-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">badge</span>
+<span class="text-on-surface font-medium">Diplomatic Passport</span>
+</td>
+<td class="py-unit-sm px-unit-md font-medium text-on-surface">Elena Rostova</td>
+<td class="py-unit-sm px-unit-md">
+<div class="flex items-center gap-unit-xs w-28">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 95.2%"></div>
+</div>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">95%</span>
+</div>
+</td>
+<td class="py-unit-sm px-unit-md font-body-sm text-body-sm text-on-surface-variant">None · Verified</td>
+<td class="py-unit-sm px-unit-md">
+<span class="inline-flex items-center gap-unit-2xs px-unit-xs py-unit-2xs rounded bg-surface-container-high text-on-secondary-container font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Verified
+                </span>
+</td>
+<td class="py-unit-sm px-unit-md font-data-mono-sm text-data-mono-sm text-on-surface-variant">M. Chen</td>
+<td class="py-unit-sm px-unit-md text-right">
+<a class="font-label-caps text-label-caps uppercase text-secondary hover:underline" href="#">Inspect</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between pt-unit-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Displaying 5 of 1,429 shift inspections</span>
+<div class="flex items-center gap-unit-xs">
+<button class="px-unit-sm py-unit-xs rounded bg-surface-container text-on-surface font-label-caps text-label-caps uppercase disabled:opacity-50" disabled="">Prev</button>
+<button class="px-unit-sm py-unit-xs rounded bg-surface-container text-on-surface font-label-caps text-label-caps uppercase hover:bg-surface-container-high">Next</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Forensic Distribution & Operational Policy (4 Cols) -->
+<div class="xl:col-span-4 flex flex-col gap-unit-lg">
+<!-- Issue Breakdown Chart Card -->
+<div class="bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col gap-unit-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-unit-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">pie_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Anomaly Distribution</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">N = 141 Flags</span>
+</div>
+<!-- SVG Donut Chart Minimal Representation -->
+<div class="flex items-center justify-center py-unit-sm">
+<div class="relative w-36 h-36 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background Circle -->
+<circle class="text-surface-container-high" cx="18" cy="18" fill="transparent" r="14" stroke="currentColor" stroke-width="4"></circle>
+<!-- Segment 1: Photo Tampering (38%) -->
+<circle class="text-error" cx="18" cy="18" fill="transparent" r="14" stroke="currentColor" stroke-dasharray="33.4 88" stroke-dashoffset="0" stroke-width="4"></circle>
+<!-- Segment 2: Face Similarity (31%) -->
+<circle class="text-secondary" cx="18" cy="18" fill="transparent" r="14" stroke="currentColor" stroke-dasharray="27.2 88" stroke-dashoffset="-33.4" stroke-width="4"></circle>
+<!-- Segment 3: MRZ Checksum (18%) -->
+<circle class="text-on-secondary-container" cx="18" cy="18" fill="transparent" r="14" stroke="currentColor" stroke-dasharray="15.8 88" stroke-dashoffset="-60.6" stroke-width="4"></circle>
+<!-- Segment 4: Low DPI (13%) -->
+<circle class="text-surface-tint" cx="18" cy="18" fill="transparent" r="14" stroke="currentColor" stroke-dasharray="11.4 88" stroke-dashoffset="-76.4" stroke-width="4"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-data-mono-lg text-data-mono-lg text-on-surface font-bold">141</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Flags</span>
+</div>
+</div>
+</div>
+<!-- Bar Breakdown Items -->
+<div class="flex flex-col gap-unit-sm">
+<!-- Item 1 -->
+<div class="flex flex-col gap-unit-2xs">
+<div class="flex justify-between items-center font-body-sm text-body-sm">
+<span class="text-on-surface font-medium flex items-center gap-unit-2xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                Photo Tampering Concerns
+              </span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">38% (54)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 38%"></div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col gap-unit-2xs">
+<div class="flex justify-between items-center font-body-sm text-body-sm">
+<span class="text-on-surface font-medium flex items-center gap-unit-2xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Face Similarity &lt; Threshold
+              </span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">31% (44)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 31%"></div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col gap-unit-2xs">
+<div class="flex justify-between items-center font-body-sm text-body-sm">
+<span class="text-on-surface font-medium flex items-center gap-unit-2xs">
+<span class="w-2 h-2 rounded-full bg-on-secondary-container"></span>
+                MRZ / Checksum Inconsistency
+              </span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">18% (25)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-secondary-container" style="width: 18%"></div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col gap-unit-2xs">
+<div class="flex justify-between items-center font-body-sm text-body-sm">
+<span class="text-on-surface font-medium flex items-center gap-unit-2xs">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+                Low Document DPI / Specular Glare
+              </span>
+<span class="font-data-mono-sm text-data-mono-sm text-on-surface font-semibold">13% (18)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-surface-tint" style="width: 13%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Operator Guidelines / Threshold Card -->
+<div class="bg-surface-container-lowest rounded-xl p-unit-lg shadow-sm flex flex-col gap-unit-sm">
+<div class="flex items-center gap-unit-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">policy</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Explainable AI (XAI) Policy</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Per Border Control Directive 24-B, automated clear is only authorized when composite confidence is 
+          <span class="font-bold text-on-surface">≥ 90.0%</span> and all tamper heatmaps register zero high-frequency residual anomalies.
+        </p>
+<div class="bg-surface-container-low rounded-lg p-unit-md flex flex-col gap-unit-2xs mt-unit-2xs">
+<div class="flex justify-between items-center font-data-mono-sm text-data-mono-sm">
+<span class="text-on-surface-variant">CONFIDENCE &gt; 90%:</span>
+<span class="text-secondary font-semibold">AUTOMATED GREEN PASS</span>
+</div>
+<div class="flex justify-between items-center font-data-mono-sm text-data-mono-sm">
+<span class="text-on-surface-variant">CONFIDENCE 75-89%:</span>
+<span class="text-on-surface font-semibold">SECONDARY EXAM REQ.</span>
+</div>
+<div class="flex justify-between items-center font-data-mono-sm text-data-mono-sm">
+<span class="text-on-surface-variant">CONFIDENCE &lt; 75%:</span>
+<span class="text-error font-semibold">MANDATORY FORENSIC HOLD</span>
+</div>
+</div>
+<div class="pt-unit-xs flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps">
+<span>HSM AUDIT TRAIL REVISION: 4.2</span>
+<a class="text-secondary uppercase hover:underline" href="#">Download SOP PDF</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-Time Notification Banner for Queue Actions -->
+<div class="fixed bottom-6 right-6 max-w-md bg-surface-container-highest p-unit-md rounded-lg shadow-xl flex items-center gap-unit-md transform translate-y-32 transition-transform duration-300 z-50" id="syncToast">
+<div class="w-8 h-8 rounded bg-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary text-[18px]">cloud_sync</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[13px] leading-tight text-on-surface">Offline Queue Synchronized</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4 cryptographic proof hashes anchored to central ledger.</span>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const syncBtn = document.getElementById('syncQueueBtn');
+    const toast = document.getElementById('syncToast');
+    if (syncBtn && toast) {
+      syncBtn.addEventListener('click', () => {
+        syncBtn.classList.add('opacity-70', 'pointer-events-none');
+        const originalText = syncBtn.innerHTML;
+        syncBtn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Relaying Hashes...</span>`;
+        
+        setTimeout(() => {
+          syncBtn.innerHTML = originalText;
+          syncBtn.classList.remove('opacity-70', 'pointer-events-none');
+          toast.classList.remove('translate-y-32');
+          setTimeout(() => {
+            toast.classList.add('translate-y-32');
+          }, 4000);
+        }, 1200);
+      });
+    }
+  })();
+</script></main></div></body></html>
